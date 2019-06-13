@@ -28,7 +28,7 @@ ui <- fluidPage(useShinyjs(),
 
                     radioButtons(
                         inputId = "q3",
-                        label = p(em("Question 3 :"), "Connaissez-vous l'histore de vos aïeux ?"),
+                        label = p(em("Question 3 :"), "Connaissez-vous l'histoire de vos aïeux ?"),
                         choices = c("Oui" = 1, "Non" = 0), inline = TRUE, selected = 0
                     ),
 
