@@ -104,6 +104,8 @@ ui <- fluidPage(useShinyjs(),
                         p("- entre 3 et 6 : dangereux"),
                         p("- plus de 6 : bourgeois")),
 
+                    uiOutput("twitter_ui"),
+
                     a(href = "https://github.com/gdevailly/OLGtron", "Code source sur GitHub")
     ))
 )
@@ -140,6 +142,20 @@ server <- function(input, output) {
 
     output$resultat <- renderText({
         olg_score()
+    })
+
+    output$twitter_ui <- renderUI({
+        url <- paste0(
+            "https://twitter.com/intent/tweet?text=Je%20suis%20not%C3%A9%20",
+            olg_score(),
+            "%20au%20test%20d%27embourgeoisement%20de%20%40OLGuillemets.",
+            "&url=https://gdevailly.shinyapps.io/olgtron/"
+        )
+        actionButton("twitter_share",
+                     label = "Partagez le résultat sur twiter",
+                     icon = icon("twitter"),
+                     onclick = sprintf("window.open('%s')", url),
+                     style = "color:#00aced")
     })
 
 }
