@@ -94,12 +94,17 @@ ui <- fluidPage(useShinyjs(),
                     div(id = "preambule",
                         h3("Vous avez un score de")),
 
-                    h1(textOutput("resultat"), align = "center", color = "red"),
+                    h1(textOutput("resultat"), align = "center", style = "color:#FF4000"),
 
                     div(id = "postambule",
-                        h3("sur l'échelle d'embourgeoisement d'Ouvrez les guillemets.", align = "right")),
+                        h3("sur l'échelle d'embourgeoisement d'Ouvrez les guillemets.", align = "right"),
+                        h4("Vous avez :"),
+                        p("- 0 : 100% prolo"),
+                        p("- entre 0.5 et 3 : suspect"),
+                        p("- entre 3 et 6 : dangereux"),
+                        p("- plus de 6 : bourgeois")),
 
-                    a(href = "https://gdevailly.shinyapps.io/olgtron/", "Code source sur GitHub")
+                    a(href = "https://github.com/gdevailly/OLGtron", "Code source sur GitHub")
     ))
 )
 
