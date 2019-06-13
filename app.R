@@ -1,7 +1,7 @@
 library(shiny)
 library(shinyjs)
 
-# Define UI for application that draws a histogram
+# Define UI for application
 ui <- fluidPage(useShinyjs(),
     fluidRow(column(8, offset = 2,
                     title = "Testez votre niveau d'embourgeoisement.",
@@ -108,7 +108,7 @@ ui <- fluidPage(useShinyjs(),
     ))
 )
 
-# Define server logic required to draw a histogram
+# Define server logic
 server <- function(input, output) {
 
     hide(id = "preambule")
@@ -120,14 +120,16 @@ server <- function(input, output) {
             show(id = "preambule")
             show(id = "postambule")
             score <- isolate({
-                as.numeric(input$q1) *2 +
-                    as.numeric(input$q2) *2 +
+                # calcul du score
+                as.numeric(input$q1) * 2 +
+                    as.numeric(input$q2) * 2 +
                     as.numeric(input$q3) +
+                    as.numeric(input$q4) +
                     as.numeric(input$q5) +
                     as.numeric(input$q6) +
                     as.numeric(input$q7a) +
                     as.numeric(input$q7b) +
-                    as.numeric(input$q8) *2 +
+                    as.numeric(input$q8) * 2 +
                     as.numeric(input$q9) +
                     0.5 * length(input$q10a) +
                     length(input$q10b)
