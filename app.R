@@ -1,8 +1,9 @@
 library(shiny)
 library(shinyjs)
+library(shinythemes)
 
 # Define UI for application
-ui <- fluidPage(useShinyjs(),
+ui <- fluidPage(useShinyjs(), theme = shinytheme("paper"),
     fluidRow(column(8, offset = 2,
                     title = "Testez votre niveau d'embourgeoisement.",
                     h1("Testez votre niveau d'embourgeoisement."),
