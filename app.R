@@ -89,7 +89,7 @@ ui <- fluidPage(useShinyjs(), theme = shinytheme("paper"),
                     ),
 
                     actionButton(
-                        inputId = "go", label = "Cacluler mon niveau d'embourgeoisement"
+                        inputId = "go", label = "Calculer mon niveau d'embourgeoisement"
                     ),
 
                     div(id = "preambule",
